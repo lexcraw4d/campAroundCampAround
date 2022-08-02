@@ -1,9 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const campRoutes = require('./camp')
+const router = require('express').Router();
+const  { apiController, createCampground } = require('../../controllers/apiController');
 
+router
+    .route('/campgrounds')
+    .post(createCampground);
 
-// api/camp
-router.use('/camp', campRoutes);
-
-module.exports = router
+ module.exports = router;

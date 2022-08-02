@@ -1,11 +1,9 @@
 const router = require('express').Router();
-const apiRoutes = require('./api');
-
+const apiRoutes = require('./api/index');
+const pagesRouter = require('./pagesRouter');
 
 router.use('/api', apiRoutes);
-router.get('/', (req, res) => {
-    res.render('index');
-});
+router.use('/', pagesRouter)
 
 router.use((req, res) => {
   res.status(404).send('<h1>😝 404 Error!</h1>');
