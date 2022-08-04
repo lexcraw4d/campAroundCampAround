@@ -12,7 +12,21 @@ createCampground: async (req, res) => {
     })
     .then(campData => res.json(campData))
     .catch(err => res.json(err))
-}}
+},
+// get all campgrounds from db
+getCampgrounds: async (req, res) => {
+    await Campground.find({})
+    .then(campData => res.json(campData))
+    .catch(err => res.json(err))
+},
+// get campground by id
+getCampgroundById: async (req, res) => {
+    await Campground.findById(req.params.id)
+    .then(campData => res.json(campData))
+    .catch(err => res.json(err))
+}
+}
+
 
 
 module.exports =  apiController 
