@@ -1,8 +1,13 @@
 const router = require('express').Router();
-const  { apiController, createCampground } = require('../../controllers/apiController');
-
+const  { apiController, createCampground, getCampgrounds, getCampgroundById } = require('../../controllers/apiController');
+//api routes
 router
     .route('/campgrounds')
-    .post(createCampground);
+    .post(createCampground)
+    .get(getCampgrounds)
+    
+router
+    .route('/campgrounds/:id')
+    .get(getCampgroundById)
 
  module.exports = router;
