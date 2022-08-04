@@ -24,6 +24,16 @@ getCampgroundById: async (req, res) => {
     await Campground.findById(req.params.id)
     .then(campData => res.json(campData))
     .catch(err => res.json(err))
+},
+// get campground by id and update it
+updateCampgroundById: async (req, res) => {
+    await Campground.findByIdAndUpdate(req.params.id, {
+        name: req.body.name,
+        image: req.body.image,
+        description: req.body.description
+    })
+    .then(campData => res.json(campData))
+    .catch(err => res.json(err))
 }
 }
 
