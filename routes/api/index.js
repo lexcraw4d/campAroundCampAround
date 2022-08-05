@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const  { apiController, createCampground, getCampgrounds, getCampgroundById, updateCampgroundById } = require('../../controllers/apiController');
+const  { deleteCampgroundById, createCampground, getCampgrounds, getCampgroundById, updateCampgroundById } = require('../../controllers/apiController');
 //api routes
 router
     .route('/campgrounds')
@@ -10,5 +10,6 @@ router
     .route('/campgrounds/:id')
     .get(getCampgroundById)
     .put(updateCampgroundById)
+    .delete(deleteCampgroundById)
 
  module.exports = router;
