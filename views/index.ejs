@@ -17,13 +17,20 @@
                     <div class="card-body">
                         <h5 class="card-title">Camping</h5>
                         <p class="card-text">
-                            <form method="get" action="">
-                            <select class="form-select" aria-label="campOptions">
-                                <option selected>View Campgrounds</option>
-                                <option value="national">National</option>
-                                <option value="state">State</option>
-                                <option value="localgems">Hidden Gems</option>
-                              </select>
+                            <form method="POST" action="/createCampground">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="campgroundName">Campground Name:</span>
+                                    <input type="text" class="form-control" name="name">
+                                  </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="imgUrl">Img url:</span>
+                                    <input type="text" class="form-control" name="image">
+                                  </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="campgroundDescription">Description:</span>
+                                    <input type="text" class="form-control" name="description">
+                                  </div>
+                                  <button type="submit">Submit</button>
                               </form>
                         </p>
                     </div>
