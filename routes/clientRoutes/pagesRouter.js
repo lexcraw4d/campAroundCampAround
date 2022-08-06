@@ -3,7 +3,7 @@ const router = express.Router();
 const { getCampgrounds, createCampground } = require('../../controllers/browserController');
 router
 .get('/', (req, res) => {
-  res.render('index');
+  res.render('home');
 })
 .get('/campgrounds', getCampgrounds)
 .post('/createCampground', createCampground)
