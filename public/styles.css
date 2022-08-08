@@ -17,3 +17,12 @@ h1 {
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+.pencil{
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: right;
+    padding:5px;
+    
+}

@@ -22,6 +22,19 @@ createCampground: async (req, res) => {
     }
     catch(err){
         console.log(err);
-    }}
+    }},
+updateCampground: async (req, res) => {  
+    try {
+        await Campground.findOneAndUpdate({
+            name: req.body.name,
+            image: req.body.image,
+            description: req.body.description
+    })
+    res.status(200).redirect('/campgrounds');
+    }
+    catch(err){
+        console.log(err);
+    }
+}
 }
 module.exports = browserController;

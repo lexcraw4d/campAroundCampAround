@@ -35,6 +35,16 @@ updateCampgroundById: async (req, res) => {
     .then(campData => res.json(campData))
     .catch(err => res.json(err))
 },
+// update campground by filtering 
+updateCampground: async (req, res) => {
+    await Campground.findOneAndUpdate({
+        name: req.body.name,
+        image: req.body.image,
+        description: req.body.description
+    })
+    .then(campData => res.json(campData))
+    .catch(err => res.json(err))
+},
 // get campground by id and delete it
 deleteCampgroundById: async (req, res) => {
     await Campground.findByIdAndDelete(req.params.id)

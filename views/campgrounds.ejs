@@ -7,12 +7,14 @@
         style="width: 30rem"
         src="<%= camp.image %>"
         alt="<%= camp.name %>"
-      />
-      <div class="card-body">
-        <h3 class="card-title campground-info"><%= camp.name %></h3>
-        <p class="card-text"><%= camp.description %></p>
-        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-      </div>
+        />
+        <div class="card-body">
+          <h3 class="card-title campground-info"><%= camp.name %></h3> 
+          <p class="card-text"><%= camp.description %></p>
+          
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+        <i fa-pencil class="fas fa-pencil pencil"></i>
     </div>
     <% }) %>
   </div>
