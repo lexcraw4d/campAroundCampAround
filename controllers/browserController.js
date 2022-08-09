@@ -23,15 +23,10 @@ createCampground: async (req, res) => {
     catch(err){
         console.log(err);
     }},
-    editCampgroundById: async (req, res) => {
-        try{
-            const campground = await Campground.findById(req.params.id, {
-                name: req.body.name,
-                image: req.body.image,
-                description: req.body.description
-            })
-            console.log(campground)
-            res.render("editCampground", {campground});
+    editCampground: async (req, res) => {
+        try {
+            const campground = await Campground.findById(req.params.id)
+            res.render('editCampground', {campground})
         }
         catch(err){
             console.log(err);
