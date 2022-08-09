@@ -23,18 +23,19 @@ createCampground: async (req, res) => {
     catch(err){
         console.log(err);
     }},
-updateCampground: async (req, res) => {  
-    try {
-        await Campground.findOneAndUpdate({
-            name: req.body.name,
-            image: req.body.image,
-            description: req.body.description
-    })
-    res.status(200).redirect('/campgrounds');
+    editCampgroundById: async (req, res) => {
+        try{
+            const campground = await Campground.findById(req.params.id, {
+                name: req.body.name,
+                image: req.body.image,
+                description: req.body.description
+            })
+            console.log(campground)
+            res.render("editCampground", {campground});
+        }
+        catch(err){
+            console.log(err);
+        }
     }
-    catch(err){
-        console.log(err);
-    }
-}
 }
 module.exports = browserController;

@@ -1,3 +1,14 @@
+<script>
+function handleDelete(e){
+    console.log("delete");
+    console.log(e.target.id);
+}
+function handleEdit(e){
+    console.log("I clicked pencel edit");
+    console.log(e.target.id);
+    console.log(e.target.name)
+}
+</script>
 <div class="row">
   <div class="col-md-4 campgrounds-card">
   <% campgrounds.forEach(camp => { %>
@@ -14,7 +25,10 @@
           
           <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
-        <i fa-pencil class="fas fa-pencil pencil"></i>
+        
+        <a href="/campgrounds/edit/<%=camp._id%> "><i class="fas fa-pencil pencil"></i></a>
+        <i id=<%=camp._id %> class="fas fa-trash trash" onClick = handleDelete(event)></i>
+        
     </div>
     <% }) %>
   </div>
