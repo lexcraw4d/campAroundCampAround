@@ -25,9 +25,17 @@ function handleEdit(e){
           
           <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
-        
-        <a href="/campgrounds/edit/<%=camp._id%> "><i class="fas fa-pencil pencil"></i></a>
-        <i id=<%=camp._id %> class="fas fa-trash trash" onClick = handleDelete(event)></i>
+        <div class="btn">
+
+          <i class="fas fa-pencil pencil"><a href="/campgrounds/edit/<%=camp._id%> "></a></i>
+        </div>
+        <!-- <i id=<%=camp._id %> class="fas fa-trash trash" onClick = handleDelete(event)></i> -->
+        <form action="/campgrounds/<%=camp._id%> " method="POST" id="delete-form">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn red">
+              <i class="fas fa-trash"></i>
+          </button>
+      </form>
         
     </div>
     <% }) %>

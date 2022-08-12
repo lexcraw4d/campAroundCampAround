@@ -1,1 +1,46 @@
-<h1>hello edit</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Camping</title>
+</head>
+<body>
+    <h1>Edit Post</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Camping</h5>
+                        <p class="card-text">
+                            <form action="/campgrounds/<%=campground._id %>" method="POST" > 
+                                <input type="hidden" name="_method" value="PUT">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="campgroundName">
+                                        Campground Name:
+                                    </span>
+                                    <input type="text" class="form-control" name="name" value="<%= campground.name %>" >
+                                  </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="imgUrl" >Img url:</span>
+                                    <input type="text" class="form-control" name="image" value="<%= campground.image %>">
+                                  </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="campgroundDescription">Description:</span>
+                                    <input type="text" class="form-control" name="description" value="<%= campground.description %>">
+                                </div>
+                                <button type="submit">Save</button>
+                              </form>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
