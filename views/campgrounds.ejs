@@ -1,42 +1,43 @@
-<script>
-function handleDelete(e){
-    console.log("delete");
-    console.log(e.target.id);
-}
-function handleEdit(e){
-    console.log("I clicked pencel edit");
-    console.log(e.target.id);
-    console.log(e.target.name)
-}
-</script>
-<div class="row">
-  <div class="col-md-4 campgrounds-card">
-  <% campgrounds.forEach(camp => { %>
-    <div class="card " style="width: 30rem">
-      <img
-        class="card-img-top campground-img"
-        style="width: 30rem"
-        src="<%= camp.image %>"
-        alt="<%= camp.name %>"
-        />
-        <div class="card-body">
-          <h3 class="card-title campground-info"><%= camp.name %></h3> 
-          <p class="card-text"><%= camp.description %></p>
-          
-          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-        </div>
-        <div class="btn">
 
-          <i class="fas fa-pencil pencil"><a href="/campgrounds/edit/<%=camp._id%> "></a></i>
-        </div>
-        <!-- <i id=<%=camp._id %> class="fas fa-trash trash" onClick = handleDelete(event)></i> -->
-        <form action="/campgrounds/<%=camp._id%> " method="POST" id="delete-form">
-          <input type="hidden" name="_method" value="DELETE">
-          <button type="submit" class="btn red">
-              <i class="fas fa-trash"></i>
+<nav class="navbar sticky-top navbar-light bg-light">
+  <i class="fas fa-campground fa-2x"></i>
+  <i class="fas fa-campground fa-2x"></i>
+</nav>
+<div class="col-md-12 backdrop">
+  <div class="wrapper ">
+  <% campgrounds.map(camp => { %>
+
+    <div class="campgrounds-card" style="width: 25rem">
+      <div class="card-body">
+        <img
+          class="card-img-top campground-img"
+          src="<%= camp.image %>"
+          alt="<%= camp.name %>"
+        />
+        <h5 class="card-title campground-info"><%= camp.name %></h5>
+
+        <p class="card-text"><%= camp.description %></p>
+
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        <a class="button btn joinBtn" href="/campgrounds/edit/<%=camp._id%> "
+          ><i class="fas fa-pencil pencil"></i
+        ></a>
+
+        <form
+          action="/campgrounds/<%=camp._id%> "
+          method="POST"
+          class="joinBtn"
+          id="delete-form"
+        >
+          <input type="hidden" name="_method" value="DELETE" />
+          <button type="submit" class="btn">
+            <i class="fas fa-trash-alt trash"></i>
           </button>
-      </form>
-        
+        </form>
+      </div>
+      <div></div>
+
+      <!-- <i id=<%=camp._id %> class="fas fa-trash trash" onClick = handleDelete(event)></i> -->
     </div>
     <% }) %>
   </div>
