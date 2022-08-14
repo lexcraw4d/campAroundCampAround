@@ -3,16 +3,37 @@ h5 {
     justify-content: center;
     color:#493436;
     font-size: 1.5em;
-    margin:8px;    
+    margin:5px;    
 }
  body .wrapper{
     background-color: #58736E;
 }
+body {
+    background-color: #58736E;
+}
+.nav{
+    background: #493436;
+    z-index: 1;
+} 
+.nav-link{
+    color: #DF7463;
+    font-weight: bold;
+}
+.container-login .section{
+    display: flex;
+    justify-content: center;
+}
+.campForm {
+    background-color: #BBD0CB;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
 .backdrop{
     background-color: #58736E;
 }
-.fa-campground {
-    font-size: 4em;
+.btn{
+    font-size: 2.5em;
     color: #DF7463;
 }
 .campgrounds-card{

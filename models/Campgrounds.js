@@ -1,7 +1,7 @@
 const { model, Schema } = require("mongoose");
 
 const campgroundSchema = new Schema({
-  _id: Schema.Types.ObjectId,
+  // _id: Schema.Types.ObjectId,
   name: {
     type: String,
     required: true,

@@ -9,31 +9,27 @@
     <title>Camping</title>
 </head>
 <body>
-    <!-- <h1>Edit Post</h1> -->
-    <div class="container">
+    <div class="container ">
         <div class="row">
             <div class="col-md-12">
                 <div class="card mt-5">
                     <div class="card-body campForm">
-                        <h5 class="card-title">Edit <%= campground.name %> </h5>
+                        <h5 class="card-title">Add a campground:</h5>
                         <p class="card-text">
-                            <form action="/campgrounds/<%=campground._id %>" method="POST" > 
-                                <input type="hidden" name="_method" value="PUT">
+                            <form method="POST" action="/createCampground">
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="campgroundName">
-                                        Campground Name:
-                                    </span>
-                                    <input type="text" class="form-control" name="name" value="<%= campground.name %>" >
+                                    <span class="input-group-text" id="campgroundName">Campground Name:</span>
+                                    <input type="text" class="form-control" name="name">
                                   </div>
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="imgUrl" >Img url:</span>
-                                    <input type="text" class="form-control" name="image" value="<%= campground.image %>">
+                                    <span class="input-group-text" id="imgUrl">Img url:</span>
+                                    <input type="text" class="form-control" name="image">
                                   </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="campgroundDescription">Description:</span>
-                                    <input type="text" class="form-control" name="description" value="<%= campground.description %>">
-                                </div>
-                                <button class="btn" type="submit">Save</button>
+                                    <input type="text" class="form-control" name="description">
+                                  </div>
+                                  <button type="submit" class="btn">Submit</button>
                               </form>
                         </p>
                     </div>
