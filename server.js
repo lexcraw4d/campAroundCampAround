@@ -5,7 +5,16 @@ const PORT = process.env.PORT || 3001;
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
 const methodOverride = require('method-override');
+const passport = require('passport');
+const morgan = require('morgan');
+const MongoStore = require('connect-mongo');
 // const cors = require('cors');
+const session = require('express-session');
+// const cookieParser = require('cookie-parser');
+
+require('dotenv').config();
+//Load passport config
+require('./config/passport')(passport);
 connectDB()
 
 
@@ -21,10 +30,32 @@ app.use(methodOverride(function(req, res){
  }
 }))
 
+//Logging middleware
+if(process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
 
 app.use(expressLayouts);
 app.set('view engine', 'ejs')
+
+//Session Middleware
+app.use(
+  session({
+  secret: 'acorn developer',
+  resave: false,
+  saveUninitialized: false,
+  store: MongoStore.create({
+      mongoUrl: process.env.DB_STRING
+  })
+  })
+);
+
+//Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())

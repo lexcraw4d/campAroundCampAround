@@ -5,6 +5,9 @@ router
 .get('/', (req, res) => {
   res.render('home')
 })
+.get('/dashboard', (req, res) => {
+  res.render('dashboard')
+})
 .get('/addCampground', (req, res) => {
   res.render('add');
 })
