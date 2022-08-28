@@ -3,17 +3,23 @@ const Campground = require("../models/Campgrounds");
 
 const browserController = {
   getCampgrounds: async (req, res) => {
+    console.log(req.user)
     let campgrounds;
     try {
-      campgrounds = await Campground.find({});
+      campgrounds = await Campground.find({user: req.user.id}).lean();
+      // console.log('nammme' ,req.user.displayName)
     } catch (err) {
       console.log(err);
     }
-    res.render("campgrounds", { campgrounds });
+    res.render("campgrounds", { 
+      name: req.user.displayName,
+      campgrounds });
   },
+
   createCampground: async (req, res) => {
     try {
       await Campground.create({
+        user: req.user.id,
         name: req.body.name,
         image: req.body.image,
         description: req.body.description,

@@ -1,40 +1,41 @@
 
 <div class="col-md-12 backdrop">
-  
+  <h3><%= name %>'s Saved Campgrounds</h3>
   <div class="wrapper ">
     <% campgrounds.map(camp => { %>
       <div class="campgrounds-card" style="width: 25rem">
-      <div class="card-body">
-        <img
+        <div class="card-body">
+          <img
           class="card-img-top campground-img"
           src="<%= camp.image %>"
           alt="<%= camp.name %>"
-        />
-        <h5 class="card-title campground-info"><%= camp.name %></h5>
-
-        <p class="card-text"><%= camp.description %></p>
-
-        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-        <a class="button btn joinBtn" href="/campgrounds/edit/<%=camp._id%> "
-          ><i class="fas fa-pencil pencil"></i
-        ></a>
-
-        <form
-          action="/campgrounds/<%=camp._id%> "
-          method="POST"
-          class="joinBtn"
-          id="delete-form"
-        >
-          <input type="hidden" name="_method" value="DELETE" />
-          <button type="submit" class="btn">
-            <i class="fas fa-trash-alt trash"></i>
-          </button>
-        </form>
+          />
+          <h5 class="card-title campground-info"><%= camp.name %></h5>
+          
+          <p class="card-text"><%= camp.description %></p>
+          
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          <a class="button btn joinBtn" href="/campgrounds/edit/<%=camp._id%> "
+            ><i class="fas fa-pencil pencil"></i
+              ></a>
+              
+              <form
+              action="/campgrounds/<%=camp._id%> "
+              method="POST"
+              class="joinBtn"
+              id="delete-form"
+              >
+              <input type="hidden" name="_method" value="DELETE" />
+              <button type="submit" class="btn">
+                <i class="fas fa-trash-alt trash"></i>
+              </button>
+            </form>
+          </div>
+          <div></div>
+          
+          <!-- <i id=<%=camp._id %> class="fas fa-trash trash" onClick = handleDelete(event)></i> -->
+        </div>
+        <% }) %>
       </div>
-      <div></div>
-
-      <!-- <i id=<%=camp._id %> class="fas fa-trash trash" onClick = handleDelete(event)></i> -->
-    </div>
-    <% }) %>
-  </div>
+      
 </div>
