@@ -11,7 +11,7 @@ router
   res.render('dashboard', {isAuthenticated: req.isAuthenticated()}) 
 })
 .get('/addCampground', ensureAuth, (req, res) => {
-  res.render('add');
+  res.render('add', {isAuthenticated: req.isAuthenticated()})
 })
 .get('/campgrounds', ensureAuth, getCampgrounds)
 .get('/campgrounds/edit/:id', ensureAuth, editCampground)

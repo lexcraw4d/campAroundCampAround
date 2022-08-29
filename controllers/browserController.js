@@ -3,8 +3,9 @@ const Campground = require("../models/Campgrounds");
 
 const browserController = {
   getCampgrounds: async (req, res) => {
-    console.log(req.user)
+    console.log(req.isAuthenticated());
     let campgrounds;
+   
     try {
       campgrounds = await Campground.find({user: req.user.id}).lean();
       // console.log('nammme' ,req.user.displayName)
@@ -12,6 +13,7 @@ const browserController = {
       console.log(err);
     }
     res.render("campgrounds", { 
+      isAuthenticated: req.isAuthenticated(),
       name: req.user.displayName,
       campgrounds });
   },
@@ -23,6 +25,7 @@ const browserController = {
         name: req.body.name,
         image: req.body.image,
         description: req.body.description,
+        isAuthenticated: req.isAuthenticated()
       });
       res.status(200).redirect("/campgrounds");
     } catch (err) {
@@ -35,7 +38,9 @@ const browserController = {
       if (!campground) {
         res.status(404).send("Campground not found");
       }
-      res.render("editCampground", { campground });
+      res.render("editCampground", { 
+        isAuthenticated: req.isAuthenticated(),
+        campground });
     } catch (err) {
       console.log(err);
     }
