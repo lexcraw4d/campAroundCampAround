@@ -3,11 +3,11 @@ const Campground = require("../models/Campgrounds");
 
 const browserController = {
   getCampgrounds: async (req, res) => {
-    console.log(req.isAuthenticated());
+    // console.log(req.isAuthenticated());
     let campgrounds;
    
     try {
-      campgrounds = await Campground.find({user: req.user.id}).lean();
+      campgrounds = await Campground.find({}).lean();
       // console.log('nammme' ,req.user.displayName)
     } catch (err) {
       console.log(err);
@@ -17,7 +17,19 @@ const browserController = {
       name: req.user.displayName,
       campgrounds });
   },
-
+getUserCampgroundById: async (req, res) => {
+    let campgrounds;
+    try {
+      campgrounds = await Campground.find({user: req.user.id}).lean();
+      console.log(campgrounds)
+    } catch (err) {
+      console.log(err);
+    }
+    res.render("dashboard", { 
+      isAuthenticated: req.isAuthenticated(),
+      name: req.user.displayName,
+      campgrounds });
+  },
   createCampground: async (req, res) => {
     try {
       await Campground.create({
