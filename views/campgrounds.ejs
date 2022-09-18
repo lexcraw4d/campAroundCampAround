@@ -1,11 +1,11 @@
-<div class="col-md-12 backdrop">
-  <h3 style="text-align: center" class="mt-4">
-    <!-- <%= name %>'s Saved Campgrounds -->
-    All User Campground Entries
-  </h3>
+<h3 style="text-align: center" class="mt-4">
+  <!-- <%= name %>'s Saved Campgrounds -->
+  All User Campground Entries
+</h3>
+<div class="col-md-12 backdrop .d-flex" >
   <div class="wrapper">
     <% campgrounds.map(camp => { %>
-    <div class="campgrounds-card" style="width: 25rem; height: 35rem">
+    <div class="campgrounds-card mx-1" style="width: 25rem; height: 35rem">
       <div class="card-body">
         <img
           class=" campground-img"
@@ -17,9 +17,9 @@
         <p class="card-text camp-description"><%= camp.description %></p>
 
         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-        <a class="button btn " href="/campgrounds/edit/<%=camp._id%> "
+        <!-- <a class="button btn " href="/campgrounds/edit/<%=camp._id%> "
           ><i class="fas fa-pencil pencil"></i
-        ></a>
+        ></a> -->
 
         <form
           action="/campgrounds/<%=camp._id%> "
@@ -27,10 +27,10 @@
           class="joinBtn"
           id="delete-form"
         >
-          <input type="hidden" name="_method" value="DELETE" />
+          <!-- <input type="hidden" name="_method" value="DELETE" />
           <button type="submit" class="btn">
             <i class="fas fa-trash-alt trash"></i>
-          </button>
+          </button> -->
         </form>
       </div>
       <!-- <div></div> -->
