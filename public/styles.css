@@ -94,7 +94,7 @@ h3{
 .wrapper{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 5rem;
