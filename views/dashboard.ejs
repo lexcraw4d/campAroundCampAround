@@ -15,24 +15,26 @@
           <h4 class="card-title campground-info mb-2"><%= camp.name %></h4>
   
           <p class="card-text camp-description"><%= camp.description %></p>
-  
-          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-          <a class="button btn " href="/campgrounds/edit/<%=camp._id%> "
-            ><i class="fas fa-pencil pencil"></i
-          ></a>
-  
-          <form
-            action="/campgrounds/<%=camp._id%> "
-            method="POST"
-            class="joinBtn"
-            id="delete-form"
-          >
-            <input type="hidden" name="_method" value="DELETE" />
-            <button type="submit" class="btn">
-              <i class="fas fa-trash-alt trash"></i>
-            </button>
-          </form>
-        </div>
+  <div>
+
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <a class="button btn " href="/campgrounds/edit/<%=camp._id%> "
+      ><i class="fas fa-pencil pencil"></i
+    ></a>
+
+    <form
+      action="/campgrounds/<%=camp._id%> "
+      method="POST"
+      class="joinBtn"
+      id="delete-form"
+    >
+      <input type="hidden" name="_method" value="DELETE" />
+      <button type="submit" class="btn">
+        <i class="fas fa-trash-alt trash"></i>
+      </button>
+    </form>
+  </div>
+  </div>
         <!-- <div></div> -->
   
         <!-- <i id=<%=camp._id %> class="fas fa-trash trash" onClick = handleDelete(event)></i> -->
