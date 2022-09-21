@@ -49,6 +49,7 @@ h1{
 .nav{
     background: #493436;
     z-index: 1;
+    height: 50px;
 } 
 .nav-link{
     color: #DF7463;
