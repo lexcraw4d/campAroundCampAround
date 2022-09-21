@@ -22,7 +22,8 @@ h1{
     font-family: 'Cabin', sans-serif;
 }
 .acornAvatar {
-    margin-top: 70px;
+    height:50px;
+    margin-left: 15px;
 }
 .home {
     background-image: url("./images/acornscene.png");
@@ -52,7 +53,7 @@ h1{
 .nav{
     background: #493436;
     z-index: 1;
-    height: 50px;
+    height: 70px;
 } 
 .nav-link{
     color: #DF7463;
