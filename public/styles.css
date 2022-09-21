@@ -21,6 +21,9 @@ h1{
     color: #FAE3D0;
     font-family: 'Cabin', sans-serif;
 }
+.acornAvatar {
+    margin-top: 70px;
+}
 .home {
     background-image: url("./images/acornscene.png");
     position: center;
