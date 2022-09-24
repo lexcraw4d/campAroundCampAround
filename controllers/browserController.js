@@ -95,7 +95,7 @@ getUserCampgroundById: async (req, res) => {
         }
   },
   createUser: async (req, res) => {
-      console.log('user', req.body)
+      // console.log('user', req.body)
       const saltRounds = 10
       const hashPassword = await bcrypt.hash(req.body.password, saltRounds)
         try {
@@ -109,7 +109,6 @@ getUserCampgroundById: async (req, res) => {
         } catch (err) {
             console.log(err);
         }
-  }
-  
-}
+      }
+};
 module.exports = browserController;
