@@ -7,13 +7,13 @@ const router = express.Router();
 router.get('/google', passport.authenticate('google', {
     scope: ['profile']
 }))
-
 //@desc Google Callback
 //@route GET auth/google/callback
 router.get('/google/callback', passport.authenticate('google', {
     failureRedirect: '/',
     successRedirect: '/dashboard'
 }))
+
 router.post('/login', passport.authenticate('local', {
     failureRedirect: '/',
     successRedirect: '/dashboard'

@@ -1,13 +1,14 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('../models/User')
-// const passport = require('passport')
+
 const bcrypt = require('bcrypt');
 const LocalUser = require('../models/LocalUser');
 const LocalStrategy = require('passport-local').Strategy
 require('dotenv').config();
 
 module.exports = 
-{   
+{ 
+  
 googleStrat: (passport) => {
     passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
@@ -38,23 +39,38 @@ googleStrat: (passport) => {
     }
     ))
 
-    passport.serializeUser((user,done) => {
-        done(null,user.id)
+    passport.serializeUser((user,done)=>{
+        console.log("in serialize");
+        done(null,user.id);
     });
-    passport.deserializeUser((id,done) => {
-        User.findById(id,(err, user) => {
-            done(err, user)
-        })
+    
+    passport.deserializeUser((id,done)=>{
+        console.log("deserialize");
+        User.findById(id).then((user)=>{
+            if(user){
+                done(null,user);
+            }
+            else{
+    
+                User.findById(id).then((user)=>{
+                    done(null,user);
+                });
+            }
+        });
     })
 },
 localStrat : (passport) => {
         passport.use(
-            new LocalStrategy({usernameField: 'email'}, (email, password, done) => {
+            new LocalStrategy({
+                usernameField: 'email',
+                passwordField: 'password'
+            }, (email, password, done) => {
                 //Match User
-                User.findOne({email: email})
-                // .select({})
+                LocalUser.findOne({
+                    email: email,
+                })
                 .then(user => {
-                    console.log(user)
+                    console.log('user',user)
                     if(!user){
                         return done(null, false, {message: 'That email is not registered'})
                     }
@@ -71,13 +87,24 @@ localStrat : (passport) => {
                 .catch(err => console.log(err))
             })
         )
-        passport.serializeUser((user, done) => {
-            done(null, user.id)
-        })
-        passport.deserializeUser((id, done) => {
-            User.findById(id, (err, user) => {
-                done(err, user)
-            })
+        passport.serializeUser((user,done)=>{
+            console.log("in serialize");
+            done(null,user.id);
+        });
+        
+        passport.deserializeUser((id,done)=>{
+            // console.log("deserialize");
+            User.findById(id).then((user)=>{
+                if(user){
+                    done(null,user);
+                }
+                else{
+        
+                    LocalUser.findById(id).then((user)=>{
+                        done(null,user);
+                    });
+                }
+            });
         })
     }
 }
