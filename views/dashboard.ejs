@@ -8,19 +8,17 @@
       <div class="campgrounds-card mx-4" style="width: 25rem;">
         <div class="card-body">
           <img
-            class=" campground-img"
+            class="campground-img"
             src="<%= camp.image %>"
             alt="<%= camp.name %>"
           />
           <h4 class="card-title campground-info mb-2"><%= camp.name %></h4>
-  
           <p class="card-text camp-description"><%= camp.description %></p>
   <div>
 
     <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-    <a class="button btn " href="/campgrounds/edit/<%=camp._id%> "
-      ><i class="fas fa-pencil pencil"></i
-    ></a>
+    <a class="button btn " href="/campgrounds/edit/<%=camp._id%> ">
+      <i class="fas fa-pencil pencil"></i></a>
 
     <form
       action="/campgrounds/<%=camp._id%> "

@@ -12,24 +12,26 @@
         <div class="card-body p-4 p-sm-5 rounded-3">
           <h5 class="card-title text-center mb-5 fw-light fs-2">Sign In</h5>
 
-          <form>
+          <form action="/auth/login" method="post">
             <div class="form-floating mb-3">
               <input
                 type="email"
                 class="form-control"
-                id="floatingInput"
+                id="email"
+                name="email"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Email address</label>
+              <label for="email">Email address</label>
             </div>
             <div class="form-floating mb-3">
               <input
                 type="password"
                 class="form-control"
-                id="floatingPassword"
+                id="password"
                 placeholder="Password"
+                name="password"
               />
-              <label for="floatingPassword">Password</label>
+              <label for="password">Password</label>
             </div>
 
             <div class="form-check mb-3">

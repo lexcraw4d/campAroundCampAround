@@ -11,14 +11,16 @@ const MongoStore = require('connect-mongo');
 // const { ensureAuth, ensureGuest } = require('./middleware/auth');
 // const cors = require('cors');
 const session = require('express-session');
+const { localStrat, googleStrat } = require('./config/passport');
 // const { ensureAuth } = require('./middleware/auth');
 // const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
 //Load passport config
-require('./config/passport')(passport);
-connectDB()
 
+connectDB()
+localStrat(passport)
+googleStrat(passport)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

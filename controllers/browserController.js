@@ -1,6 +1,8 @@
 const Campground = require("../models/Campgrounds");
 // const ObjectId = require("mongodb").ObjectID;
-
+const User = require("../models/User");
+const bcrypt = require('bcrypt');
+const LocalUser = require("../models/LocalUser");
 const browserController = {
   getCampgrounds: async (req, res) => {
     // console.log(req.isAuthenticated());
@@ -78,7 +80,7 @@ getUserCampgroundById: async (req, res) => {
       // }
       console.error(err);
     }
-    },
+  },
     deleteCampgroundById: async (req, res) => {
         try {
             let campground = await Campground.findById(req.params.id).lean();
@@ -88,8 +90,26 @@ getUserCampgroundById: async (req, res) => {
             campground = await Campground.findByIdAndDelete(req.params.id);    
             res.redirect("/campgrounds");   
     }
-    catch (err) {
-        console.log(err);
-    }
-}}
+        catch (err) {
+            console.log(err);
+        }
+  },
+  createUser: async (req, res) => {
+      console.log('user', req.body)
+      const saltRounds = 10
+      const hashPassword = await bcrypt.hash(req.body.password, saltRounds)
+        try {
+            await LocalUser.create({
+                // user: req.user.id,
+                email: req.body.email,
+                password: hashPassword,
+                isAuthenticated: req.isAuthenticated()
+            });
+            res.status(200).redirect("/campgrounds");
+        } catch (err) {
+            console.log(err);
+        }
+  }
+  
+}
 module.exports = browserController;

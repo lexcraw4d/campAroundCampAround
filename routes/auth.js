@@ -11,12 +11,13 @@ router.get('/google', passport.authenticate('google', {
 //@desc Google Callback
 //@route GET auth/google/callback
 router.get('/google/callback', passport.authenticate('google', {
-    failureRedirect: '/'
-}), (req, res) => { 
-   //once we get the callback, we redirect the user to the dashboard
-    res.redirect('/dashboard');
-})
-
+    failureRedirect: '/',
+    successRedirect: '/dashboard'
+}))
+router.post('/login', passport.authenticate('local', {
+    failureRedirect: '/',
+    successRedirect: '/dashboard'
+}))
 //@desc logout user
 //@route /auth/logout
 router.get('/logout', (req,res) => {
