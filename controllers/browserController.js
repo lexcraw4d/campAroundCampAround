@@ -105,7 +105,7 @@ const browserController = {
   },
   createUser: async (req, res) => {
     // console.log('user', req.body)
-    const saltRounds = 10;
+    const saltRounds = 12;
     const hashPassword = await bcrypt.hash(req.body.password, saltRounds);
     try {
       // console.log(req.body)
