@@ -27,6 +27,7 @@ const browserController = {
     try {
       campgrounds = await Campground.find({ user: req.user.id }).lean();
       console.log(campgrounds);
+      console.log(req.user)
     } catch (err) {
       console.log(err);
       
@@ -34,7 +35,9 @@ const browserController = {
     res.render("dashboard", {
       isAuthenticated: req.isAuthenticated(),
       name: req.user.displayName,
-      localUser: req.user.email,
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      localUser: req.user.firstName,
       campgrounds,
     });
   },
@@ -105,6 +108,7 @@ const browserController = {
     const saltRounds = 10;
     const hashPassword = await bcrypt.hash(req.body.password, saltRounds);
     try {
+      // console.log(req.body)
       await LocalUser.create({
         // user: req.user.id,
         firstName: req.body.firstName,
