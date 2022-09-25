@@ -5,7 +5,7 @@ const { getCampgrounds, getUserCampgroundById, createCampground, editCampground,
 // const { getCampgroundById } = require('../../controllers/apiController');
 router
 .get('/', ensureGuest, (req, res) => {
-  res.render('home',  {isAuthenticated: req.isAuthenticated()})
+  res.render('home',{isAuthenticated: req.isAuthenticated()});
 })
 .get('/dashboard', ensureAuth, getUserCampgroundById)
 // .post('/dashboard', )
