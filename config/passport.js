@@ -67,21 +67,22 @@ module.exports = {
         },
         (email, password, done) => {
           //Match User
+          console.log("user in local", LocalUser);
           LocalUser.findOne({
             email: email,
           })
-            .then((user) => {
-              console.log("user in local", user);
-              if (!user) {
+            .then((LocalUser) => {
+              if (!LocalUser) {
                 return done(null, false, {
                   message: "That email is not registered",
                 });
               }
+
               //Match password
-              bcrypt.compare(password, user.password, (err, isMatch) => {
+              bcrypt.compare(password, LocalUser.password, (err, isMatch) => {
                 if (err) throw err;
                 if (isMatch) {
-                  return done(null, user);
+                  return done(null, LocalUser);
                 } else {
                   return done(null, false, { message: "Password incorrect" });
                 }
