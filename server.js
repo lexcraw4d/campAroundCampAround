@@ -7,11 +7,13 @@ const expressLayouts = require('express-ejs-layouts');
 const methodOverride = require('method-override');
 const passport = require('passport');
 const morgan = require('morgan');
+// const session = require('express-session');
+const flash = require('connect-flash');
 const MongoStore = require('connect-mongo');
 // const { ensureAuth, ensureGuest } = require('./middleware/auth');
 // const cors = require('cors');
 const session = require('express-session');
-const { localStrat, googleStrat } = require('./config/passport');
+const { localStrat, googleStrat} = require('./config/passport');
 // const { ensureAuth } = require('./middleware/auth');
 // const cookieParser = require('cookie-parser');
 
@@ -59,14 +61,14 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Global variables
-app.use( (req, res, next) => {
-  res.locals.user = req.user || null;
-  next();
-} );
+
+// Connect flash
+app.use(flash());
+
+
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 // app.use(cors())
 

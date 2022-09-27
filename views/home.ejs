@@ -1,46 +1,63 @@
 <div class="container">
-  
-  <div class="row h-100 justify-content-center align-items-center" style="flex-direction: row-reverse;" >
-    <h1 style="text-align: center" class="mt-4">
-      Take your next journey with Acorn!
-    </h1>
-    <h3 style="text-align:center; color: #FAE3D0; font-family: 'Cabin', sans-serif;" class="mt-4"> Create and share personalized camping experiences and view others. </h3>
+  <div
+    class="row h-100 justify-content-center align-items-center"
+    style="flex-direction: row-reverse"
+  >
+  <h1 style="text-align: center" class="mt-4">
+    Take your next journey with Acorn!
+  </h1>
+  <h3
+  style="
+        text-align: center;
+        color: #fae3d0;
+        font-family: 'Cabin', sans-serif;
+      "
+      class="mt-4"
+      >
+      Create and share personalized camping experiences and view others.
+    </h3>
     
-    <img src="/images/acornscene.png" class=" rounded-3 my-5"style="height: 550px; width: 450px" />
+    
+    
+    
+    <img
+    src="/images/acornscene.png"
+    class="rounded-3 my-5"
+    style="height: 550px; width: 450px"
+    />
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
       <div class="card border-0 shadow rounded-3 my-5">
         <div class="card-body p-4 p-sm-5 rounded-3">
           <h5 class="card-title text-center mb-5 fw-light fs-2">Sign In</h5>
-
-          <form action="/auth/login" method="post">
-       
+          
+          <form action="/auth/login" method="post" id="loginForm">
             <div class="form-floating mb-3">
               <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                placeholder="name@example.com"
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="name@example.com"
               />
               <label for="email">Email address</label>
             </div>
             <div class="form-floating mb-3">
               <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Password"
-                name="password"
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Password"
+              name="password"
               />
               <label for="password">Password</label>
             </div>
-
+            
             <div class="form-check mb-3">
               <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="rememberPasswordCheck"
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="rememberPasswordCheck"
               />
               <label class="form-check-label" for="rememberPasswordCheck">
                 Remember password
@@ -48,18 +65,26 @@
             </div>
             <div class="d-grid">
               <button
-                class="btn btn-login loginBtn text-uppercase fw-bold"
-                type="submit"
+              class="btn btn-login loginBtn text-uppercase fw-bold"
+              type="submit"
               >
-                Sign in
-              </button>
+              Sign in
+            </button>
+          </div>
+         
+          <% if (error.length > 0) { %>
+            <div class="alert alert-danger">
+              <%= error %>
             </div>
-            <hr class="my-4" />
+          <% } %>
+          <hr class="my-4" />
             <div class="d-grid mb-2">
-       
-              <a class="btn btn-login loginBtn text-uppercase fw-bold" href="/auth/google" role="button">
-                <i class="fab fa-google me-2">
-                </i> 
+              <a
+                class="btn btn-login loginBtn text-uppercase fw-bold"
+                href="/auth/google"
+                role="button"
+              >
+                <i class="fab fa-google me-2"> </i>
                 Sign in with Google
               </a>
             </div>
@@ -72,7 +97,6 @@
               </section>
             </div>
           </form>
-
         </div>
       </div>
     </div>
