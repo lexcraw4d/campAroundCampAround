@@ -71,10 +71,9 @@
               Sign in
             </button>
           </div>
-         
-          <% if (error.length > 0) { %>
-            <div class="alert alert-danger">
-              <%= error %>
+          <% if (messages.length) { %>
+            <div class="alert alert-danger my-4">
+              <%= messages %>
             </div>
           <% } %>
           <hr class="my-4" />
