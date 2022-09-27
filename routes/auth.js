@@ -12,13 +12,15 @@ router.get('/google', passport.authenticate('google', {
 //@route GET auth/google/callback
 router.get('/google/callback', passport.authenticate('google', {
     failureRedirect: '/',
-    successRedirect: '/dashboard'
+    successRedirect: '/dashboard',
+    successFlash: true
 }))
 
 router.post('/login', passport.authenticate( 'local', {
     failureRedirect: '/',
     failureFlash: true,
-    successRedirect: '/dashboard'
+    successRedirect: '/dashboard',
+    successFlash: true
 })
 )
 //@desc logout user

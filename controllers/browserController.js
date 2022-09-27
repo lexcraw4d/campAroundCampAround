@@ -38,8 +38,11 @@ const browserController = {
       firstName: req.user.firstName,
       lastName: req.user.lastName,
       localUser: req.user.firstName,
+      messages: "Successfully Logged In!",
       campgrounds,
-    });
+    }
+    );
+    
   },
   createCampground: async (req, res) => {
     try {
