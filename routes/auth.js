@@ -21,6 +21,7 @@ router.post('/login', passport.authenticate( 'local', {
     failureFlash: true,
     successRedirect: '/dashboard',
     successFlash: true
+    
 })
 )
 //@desc logout user

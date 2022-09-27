@@ -6,8 +6,11 @@ const { getCampgrounds, getUserCampgroundById, createCampground, editCampground,
 router
 .get('/', ensureGuest, (req, res) => {
   res.render('home',{isAuthenticated: req.isAuthenticated(), 
-  messages: req.flash('error')});
+  messages: req.flash('error'),
+  success_msg: req.flash('success_msg', 'Successfully signed up! Please log in.')});
 })
+
+
 .get('/dashboard', ensureAuth, getUserCampgroundById)
 // .post('/dashboard', )
 .get('/addCampground', ensureAuth, (req, res) => {
@@ -19,7 +22,7 @@ router
 })
 .get('/campgrounds', ensureAuth, getCampgrounds)
 .get('/campgrounds/edit/:id', ensureAuth, editCampground)
-.post('/register', ensureGuest, createUser )
+.post('/register', ensureGuest, createUser)
 .post('/createCampground', ensureAuth, createCampground)
 .put('/campgrounds/:id', ensureAuth, updateCampgroundById)
 .delete('/campgrounds/:id', ensureAuth, deleteCampgroundById)

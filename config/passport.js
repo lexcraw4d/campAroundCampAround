@@ -67,7 +67,7 @@ module.exports = {
         },
         (email, password, done) => {
           //Match User
-          console.log("user in local", LocalUser);
+          
           LocalUser.findOne({
             email: email,
           })
@@ -84,7 +84,8 @@ module.exports = {
                 if (isMatch) {
                   return done(null, LocalUser);
                 } else {
-                  return done(null, false, { message: "Password incorrect" });
+                  // console.log("password incorrect");
+                  return done(null, false, { message: "Incorrect password, please try again! " });
                 }
               });
             })
