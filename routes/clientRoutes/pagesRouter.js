@@ -5,7 +5,7 @@ const { getCampgrounds, getUserCampgroundById, createCampground, editCampground,
 // const { getCampgroundById } = require('../../controllers/apiController');
 router
 .get('/', ensureGuest, (req, res) => {
-  req.flash('success_msg', 'Sucessfully registered! Please log in.')
+  // req.flash('success_msg', 'Sucessfully registered! Please log in.')
   // then
   res.render('home', {
     isAuthenticated: req.isAuthenticated(),

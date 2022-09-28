@@ -120,6 +120,7 @@ const browserController = {
         password: hashPassword,
         isAuthenticated: req.isAuthenticated(),
       });
+      
       res.status(200).redirect("/campgrounds");
     } catch (err) {
       console.log(err);
