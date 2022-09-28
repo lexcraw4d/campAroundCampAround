@@ -18,18 +18,21 @@
                         <p class="card-text">
                             <form method="POST" action="/createCampground">
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="campgroundName">Campground Name:</span>
+                                    <div class="input-group-text" style="width:12rem;" id="campgroundName">Campground Name:</div>
                                     <input type="text" class="form-control" name="name">
                                   </div>
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="imgUrl">Img url:</span>
+                                    <div style="width: 12rem; text-align: center;" class="input-group-text" id="imgUrl">Image url:</div>
                                     <input type="text" class="form-control" name="image">
                                   </div>
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="campgroundDescription">Description:</span>
-                                    <input type="text" class="form-control" name="description">
+                                    <div class="input-group-text" style="width: 12rem; text-align: center;" id="campgroundDescription">Description:</div>
+                                    <textarea type="text" class="form-control" name="description" cols="30" rows="3"></textarea>
+                                    <!-- <input type="text" class="form-control" name="description"> -->
                                   </div>
-                                  <button type="submit" class="btn">Submit</button>
+                                 <div style="text-align:center;">
+                                    <button type="submit" class="btn">Submit</button>
+                                 </div> 
                               </form>
                         </p>
                     </div>

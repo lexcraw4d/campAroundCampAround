@@ -1,4 +1,5 @@
 <div class="container">
+  
   <div
     class="row h-100 justify-content-center align-items-center"
     style="flex-direction: row-reverse"
@@ -16,12 +17,6 @@
       >
       Create and share personalized camping experiences and view others.
     </h3>
-  
-    <% if (success_msg.length) { %>
-    <div class="alert alert-success" role="alert">
-      <%= success_msg %>
-    <% } %>
-    <pre><code><%= JSON.stringify(locals, undefined, '  ') %></code></pre>
     
     <img
     src="/images/acornscene.png"
@@ -29,6 +24,11 @@
     style="height: 550px; width: 450px"
     />
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <% if (success_msg.length) { %>
+        <h4 class="alert alert-success" role="alert" style="display: flex; justify-content: center; max-width: 500px;" >
+          <%= success_msg %>
+        <% } %>
+        </h4>
       <div class="card border-0 shadow rounded-3 my-5">
         <div class="card-body p-4 p-sm-5 rounded-3">
           <h5 class="card-title text-center mb-5 fw-light fs-2">Sign In</h5>

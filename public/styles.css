@@ -40,6 +40,7 @@ h1{
     align-items: center;
     flex-wrap: wrap;
 }
+
 .campground-img{
     width: 100%;
     display: flex;
@@ -54,6 +55,7 @@ h1{
     background: #493436;
     z-index: 1;
     height: 70px;
+
 } 
 .nav-link{
     color: #DF7463;

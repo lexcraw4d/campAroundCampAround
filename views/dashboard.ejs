@@ -1,9 +1,15 @@
+
+
 <h1 style="text-align: center" class="mt-4">
   <%= name || localUser %>'s Saved Campgrounds
 </h1>
-
 <div class="col-md-12 backdrop .d-flex">
-    <div class="wrapper">
+  <div class="wrapper">
+      <% if (!campgrounds.length) { %>
+        <h3 style="text-align: center; color: #FBC991;" class="mt-4"  >
+          You don't have any saved campgrounds! Add one to get started. 
+        </h3>
+      <% } %>
       <% campgrounds.map(camp => { %>
       <div class="campgrounds-card mx-4" style="width: 25rem;">
         <div class="card-body">

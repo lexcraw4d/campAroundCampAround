@@ -5,14 +5,17 @@ const { getCampgrounds, getUserCampgroundById, createCampground, editCampground,
 // const { getCampgroundById } = require('../../controllers/apiController');
 router
 .get('/', ensureGuest, (req, res) => {
-  res.render('home',{isAuthenticated: req.isAuthenticated(), 
-  messages: req.flash('error'),
-  success_msg: req.flash('success_msg', 'Successfully signed up! Please log in.')});
+  req.flash('success_msg', 'Sucessfully registered! Please log in.')
+  // then
+  res.render('home', {
+    isAuthenticated: req.isAuthenticated(),
+    messages: req.flash('error'),
+    success_msg: req.flash('success_msg')
+  })
 })
 
 
 .get('/dashboard', ensureAuth, getUserCampgroundById)
-// .post('/dashboard', )
 .get('/addCampground', ensureAuth, (req, res) => {
   res.render('add', {isAuthenticated: req.isAuthenticated()})
 })
