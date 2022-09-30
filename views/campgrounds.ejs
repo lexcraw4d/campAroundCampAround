@@ -1,20 +1,22 @@
-<h1 style="text-align: center" class="mt-4">
+<h1 style="text-align: center" class="m-4">
   <!-- <%= name %>'s Saved Campgrounds -->
   All Campground Entries
 </h1>
 <div class="col-md-12 backdrop .d-flex" >
-  <div class="wrapper">
+  <div class="wrapper ">
     <% campgrounds.map(camp => { %>
-    <div class="campgrounds-card mx-4" style="width: 25rem;">
+    <div class="campgrounds-card mx-4 w-400">
       <div class="card-body">
         <img
           class=" campground-img"
           src="<%= camp.image %>"
           alt="<%= camp.name %>"
         />
-        <h4 class="card-title campground-info mb-2"><%= camp.name %></h4>
+        <h5 class="card-title campground-info mb-2"><%= camp.name %></h5>
+<div class="description">
 
-        <p class="card-text camp-description"><%= camp.description %></p>
+  <p class="card-text camp-description"><%= camp.description %></p>
+</div>
 
         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         <!-- <a class="button btn " href="/campgrounds/edit/<%=camp._id%> "
