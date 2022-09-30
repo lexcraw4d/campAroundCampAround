@@ -21,6 +21,42 @@ h1{
     color: #FAE3D0;
     font-family: 'Cabin', sans-serif;
 }
+
+
+#navbarNav ul{
+    background-color: #58736E;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    /* width: 40%; */
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
+#navbarNav ul li {
+    width: min-content;
+    
+}
+button.navbar-toggler{
+    margin-right: 4px;
+}
+a.nav-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    width: 165px;
+}
+
+
+
+.navbar-collapse{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3px;
+}
+.navbar-collapse collapse show {
+    background-color: #58736E;
+    display: flex;
+    align-items: flex-end;
+}
+
 .acornAvatar {
     height:50px;
     margin-left: 15px;
@@ -133,7 +169,6 @@ h1{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 5rem;
     background-color: #58736E;
 }
 .camp-description{
@@ -149,6 +184,9 @@ h1{
     overflow: scroll;
     text-overflow: ellipsis;
   
+}
+.editBtn{
+    display: flex;
 }
 .col{
     display: flex;
@@ -185,3 +223,28 @@ img:hover {
         transition: all .2s ease-in-out; 
 
     }
+    @media screen and (min-width: 990px){
+        #navbarNav ul{
+            flex-direction: row;
+            border-style: none;
+            background-color: #493436;
+        }
+        a.nav-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            width: 160px;
+        }
+    }
+    /* @media screen and (min-device-width: 375px) {
+        #navbarNav ul{
+            background-color: #58736E;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+            width: 40%;
+            flex-direction: column-reverse;
+            align-items: flex-end;
+        }
+        #navbarNav ul li {
+            width: min-content;
+        } */
+/* } */
