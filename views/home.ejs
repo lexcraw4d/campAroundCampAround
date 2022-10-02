@@ -1,7 +1,7 @@
 <div class="container">
   <div
     class="row h-100 justify-content-center align-items-center"
-    style="flex-direction: row-reverse"
+    style="flex-direction: row-reverse; position: inherit;"
   >
     <h3
       style="
@@ -24,91 +24,169 @@
       Create and share personalized camping experiences and view others.
     </h6>
 
-    <img
-      src="/images/acornscene.png"
-      class="rounded-3 my-5"
-      style="height: 550px; width: 450px"
-    />
-    
-    <div class="col-4 mx-auto">
-      <% if (success_msg.length) { %>
-      <h4
-        class="alert alert-success"
-        role="alert"
-        style="display: flex; justify-content: center; max-width: 500px"
-      >
-        <%= success_msg %> <% } %>
-      </h4>
-      <div class="row h-100 justify-content-center align-items-center" style="flex-direction: row-reverse;" >
-      <div class="login-form card border-0 shadow rounded-3 my-5">
-        <div class="card-body p-4 p-sm-5 rounded-3">
-          <h5 class="card-title text-center mb-5 fw-light fs-2">Sign In</h5>
-          <form action="/auth/login" method="post" id="loginForm">
-            <div class="form-floating mb-3">
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                placeholder="name@example.com"
-              />
-              <label for="email">Email address</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Password"
-                name="password"
-              />
-              <label for="password">Password</label>
-            </div>
-
-            <div class="form-check mb-3">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="rememberPasswordCheck"
-              />
-              <label class="form-check-label" for="rememberPasswordCheck">
-                Remember password
-              </label>
-            </div>
-            <div class="d-grid">
-              <button
-                class="btn btn-login loginBtn text-uppercase fw-bold"
-                type="submit"
+    <% if (messages.length) { %>
+      <div class="alert alert-danger w-auto" role="alert">
+        <%= messages %>
+      </div>
+     <% } %>
+    <div
+      class="rounded-3 my-1"
+      style="
+        display: flex;
+        align-content: flex-end;
+        justify-content: flex-start;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      "
+    >
+      <div style="display: flex; justify-content: flex-end">
+        <div
+          class="row h-100 justify-content-center align-items-center"
+          style="flex-direction: row-reverse"
+        >
+          <div class="login-form card border-0 shadow rounded-3 my-5">
+            <div class="card-body p-4 p-sm-5 rounded-3">
+              <h5 class="card-title text-center mb-5 fw-light fs-2">Sign In</h5>
+            
+              <form
+                action="/auth/login"
+                method="post"
+                id="loginForm"
+                data-np-autofill-type="login"
+                data-np-checked="1"
+                data-np-watching="1"
+                data-bitwarden-watching="1"
               >
-                Sign in
-              </button>
-            </div>
-            <% if (messages.length) { %>
-            <div class="alert alert-danger my-4"><%= messages %></div>
-            <% } %>
-            <hr class="my-4" />
-            <div class="d-grid mb-2">
-              <a
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="name@example.com"
+                    data-np-autofill-type="username"
+                    data-np-uid="d2b770f3-6f84-499c-b35c-fa11a9c448df"
+                    autocomplete="off"
+                    data-np-checked="1"
+                  />
+                  <label for="email">Email address</label>
+                  <span
+                    data-np-uid="d2b770f3-6f84-499c-b35c-fa11a9c448df"
+                    style="
+                      width: 24px;
+                      min-width: 24px;
+                      height: 24px;
+                      background-image: url('chrome-extension://fooolghllnmhmmndgjiamiiodkpenpbb/assets/manifestIcons/icon.svg');
+                      background-repeat: no-repeat;
+                      background-position: left center;
+                      background-size: auto;
+                      border: none;
+                      display: inline;
+                      visibility: visible;
+                      position: absolute;
+                      cursor: pointer;
+                      z-index: 1001;
+                      padding: 0px;
+                      transition: none 0s ease 0s;
+                      pointer-events: all;
+                      right: 0px;
+                      left: 201.588px;
+                      top: 15.9684px;
+                    "
+                  ></span>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Password"
+                  name="password"
+                  data-np-autofill-type="password"
+                  data-np-uid="f6eed0ef-e57b-4845-92a1-7ef9af31d525"
+                  autocomplete="off"
+                  data-np-checked="1"
+                  />
+                  <label for="password">Password</label>
+                  <span
+                  data-np-uid="f6eed0ef-e57b-4845-92a1-7ef9af31d525"
+                  style="
+                      width: 24px;
+                      min-width: 24px;
+                      height: 24px;
+                      background-image: url('chrome-extension://fooolghllnmhmmndgjiamiiodkpenpbb/assets/manifestIcons/icon.svg');
+                      background-repeat: no-repeat;
+                      background-position: left center;
+                      background-size: auto;
+                      border: none;
+                      display: inline;
+                      visibility: visible;
+                      position: absolute;
+                      cursor: pointer;
+                      z-index: 1001;
+                      padding: 0px;
+                      transition: none 0s ease 0s;
+                      pointer-events: all;
+                      right: 0px;
+                      left: 201.588px;
+                      top: 15.9597px;
+                    "
+                  ></span>
+                </div>
+                <div class="form-check mb-3">
+                  <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="rememberPasswordCheck"
+                  data-np-checked="1"
+                  />
+                  <label class="form-check-label" for="rememberPasswordCheck">
+                    Remember password
+                  </label>
+                </div>
+                <div class="d-grid">
+                  <button
+                  class="btn btn-login loginBtn text-uppercase fw-bold"
+                  type="submit"
+                  >
+                  Sign in
+                </button>
+              </div>
+              
+              <hr class="my-4" />
+              <div class="d-grid mb-2">
+                <a
                 class="btn btn-login loginBtn text-uppercase fw-bold"
                 href="/auth/google"
                 role="button"
-              >
-                <i class="fab fa-google me-2"> </i>
+                >
+                <i class="fab fa-google me-2" aria-hidden="true"> </i>
                 Sign in with Google
               </a>
             </div>
             <div class="d-grid">
               <section
-                class="btn btn-facebook btn-login text-uppercase fw-bold"
-                type="submit"
+              class="btn btn-facebook btn-login text-uppercase fw-bold"
+              type="submit"
               >
-                <i class="fab fa-facebook-f me-2"></i> Sign in with Facebook
-              </section>
-            </div>
-          </form>
-        </div>
+              <i class="fab fa-facebook-f me-2" aria-hidden="true"></i>
+              Sign in with Facebook
+            </section>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
+<img
+src="/images/acornscene.png"
+class="rounded-3 my-5"
+style="height: 570px; 
+        /* width: 450px; */"
+      />
+    </div>
+  </div>
+</div>
+<pre><code><%= JSON.stringify(locals, undefined, '  ') %></code></pre>

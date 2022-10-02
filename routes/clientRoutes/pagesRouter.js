@@ -7,21 +7,31 @@ router
 .get('/', ensureGuest, (req, res) => {
   // req.flash('success_msg', 'Sucessfully registered! Please log in.')
   // then
+
   res.render('home', {
     isAuthenticated: req.isAuthenticated(),
     messages: req.flash('error'),
     success_msg: req.flash('success_msg')
   })
 })
-
-
 .get('/dashboard', ensureAuth, getUserCampgroundById)
 .get('/addCampground', ensureAuth, (req, res) => {
   res.render('add', {isAuthenticated: req.isAuthenticated()})
 })
-.get('/signup', ensureGuest, (req, res) => {
+.get('/register', ensureGuest, (req, res) => {
   // console.log(req.isAuthenticated())
-  res.render('signup', {isAuthenticated: req.isAuthenticated()})
+  console.log('req.body', req.body.firstName)
+  // if (req.body.firstName.length < 1) {
+  //   req.flash('error', 'Please enter a valid name')
+  //   return res.render('register', { messages: req.flash('error'),
+  //   success_msg: req.flash('success_msg')})
+  // }
+  res.render('register', {
+    isAuthenticated: req.isAuthenticated(),
+    messages: req.flash('error'),
+    success_msg: req.flash('success_msg')
+  }
+  )
 })
 .get('/campgrounds', ensureAuth, getCampgrounds)
 .get('/campgrounds/edit/:id', ensureAuth, editCampground)

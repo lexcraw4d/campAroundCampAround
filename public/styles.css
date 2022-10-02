@@ -14,6 +14,7 @@ body .wrapper{
 body {
     font-family: 'Cabin', sans-serif;
     background-color: #58736E;
+    /* position: relative; */
     
 }
 h1{
@@ -73,7 +74,7 @@ a.nav-link {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: inherit;
+    
 }
 .card-body{
     /* background-color: #BBD0CB; */
@@ -81,7 +82,7 @@ a.nav-link {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: inherit;
+  
 }
 
 

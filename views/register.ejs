@@ -1,0 +1,125 @@
+
+<div class="container">
+  <div
+    class="row h-100 justify-content-center align-items-center"
+    style="flex-direction: row-reverse; position: inherit;"
+  >
+    <h3
+      style="
+        text-align: center;
+        color: #fae3d0;
+        font-family: 'Cabin', sans-serif;
+      "
+      class="mt-4"
+    >
+      Take your next journey with Acorn!
+    </h3>
+    <h6
+      style="
+        text-align: center;
+        color: #fae3d0;
+        font-family: 'Cabin', sans-serif;
+      "
+      class="mt-4"
+    >
+      Create and share personalized camping experiences and view others.
+    </h6>
+
+    <div
+      class="rounded-3 my-1"
+      style="
+        display: flex;
+        align-content: flex-end;
+        justify-content: flex-start;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      "
+    >
+      <div style="display: flex; justify-content: flex-end">
+        <div
+          class="row h-100 justify-content-center align-items-center"
+          style="flex-direction: row-reverse"
+        >
+          <div class="login-form card border-0 shadow rounded-3 my-5">
+            <div class="card-body p-4 p-sm-5 rounded-3">
+              <h5 class="card-title text-center mb-5 fw-light fs-2">Register</h5>
+              <form method="POST" action="/register">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="First Name"
+                  />
+                  <label for="firstName">First Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Last Name"
+                  />
+                  <label for="lastName">Last Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="name@example.com"
+                  />
+                  <label for="email">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                  />
+                  <label for="password">Password</label>
+                </div>
+    
+                <div class="form-check mb-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="rememberPasswordCheck"
+                  />
+                  <label class="form-check-label" for="rememberPasswordCheck">
+                    Remember password
+                  </label>
+                </div>
+                <div class="d-grid">
+                  <button
+                    class="btn btn-login loginBtn text-uppercase fw-bold"
+                    type="submit"
+                  >
+                    Register
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="/images/acornscene.png"
+        class="rounded-3 my-5"
+        style="height: 570px; 
+        /* width: 450px; */"
+      />
+    </div>
+  </div>
+</div>
+
+  
+
+<pre><code><%= JSON.stringify(locals, undefined, '  ') %></code></pre>
