@@ -107,11 +107,14 @@ const browserController = {
     }
   },
   createUser: async (req, res) => {
-    // console.log('user', req.body)
+   console.log(req.body, 'req.body')
     const saltRounds = 12;
     const hashPassword = await bcrypt.hash(req.body.password, saltRounds);
+    if(!req.body.firstName || !req.body.lastName || !req.body.email || !req.body.password){
+      req.flash('error', 'Please fill in all fields')
+      res.redirect('/register')
+    }
     try {
-      // console.log(req.body)
       await LocalUser.create({
         // user: req.user.id,
         firstName: req.body.firstName,
@@ -123,7 +126,7 @@ const browserController = {
       
       res.status(200).redirect("/campgrounds");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   },
 };

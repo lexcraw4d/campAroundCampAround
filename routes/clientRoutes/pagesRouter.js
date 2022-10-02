@@ -20,16 +20,9 @@ router
 })
 .get('/register', ensureGuest, (req, res) => {
   // console.log(req.isAuthenticated())
-  console.log('req.body', req.body.firstName)
-  // if (req.body.firstName.length < 1) {
-  //   req.flash('error', 'Please enter a valid name')
-  //   return res.render('register', { messages: req.flash('error'),
-  //   success_msg: req.flash('success_msg')})
-  // }
   res.render('register', {
     isAuthenticated: req.isAuthenticated(),
     messages: req.flash('error'),
-    success_msg: req.flash('success_msg')
   }
   )
 })

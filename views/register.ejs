@@ -24,7 +24,11 @@
     >
       Create and share personalized camping experiences and view others.
     </h6>
-
+    <% if (messages.length) { %>
+      <div class="alert alert-danger w-auto" role="alert">
+        <%= messages %>
+      </div>
+     <% } %>
     <div
       class="rounded-3 my-1"
       style="
