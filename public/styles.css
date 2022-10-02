@@ -35,7 +35,7 @@ h1{
     
 }
 button.navbar-toggler{
-    margin-right: 4px;
+    margin-right: 8px;
 }
 a.nav-link {
     display: inline-block;
@@ -67,6 +67,14 @@ a.nav-link {
     background-size: auto 100%;
     height: 100vh;
 }
+.login-form{
+    background-color: #BBD0CB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: inherit;
+}
 .card-body{
     /* background-color: #BBD0CB; */
     display: flex;
@@ -75,6 +83,7 @@ a.nav-link {
     align-items: center;
     margin: inherit;
 }
+
 
 .campground-img{
     position: relative;
@@ -86,7 +95,9 @@ a.nav-link {
     margin: auto;
     /* margin: auto; */
 }
-
+::-webkit-scrollbar {
+    width: 0px;
+}
 .nav{
     background: #493436;
     z-index: 1;
@@ -149,6 +160,8 @@ a.nav-link {
 .description {
     display: flex;
     width: 20rem;
+    flex-direction: column;
+    align-items: flex-end;
 
 }
 .campgrounds-card{
@@ -178,14 +191,10 @@ a.nav-link {
 
 }
 .camp-description{
+    height: 138px;
+    margin-bottom: -25px;
     font-size: small;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    display: 
-    -webkit-box;
+    display: -webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: scroll;
@@ -202,17 +211,14 @@ a.nav-link {
 
 .pencil{
     color: #461F00;
-    font-size: 20px;
+    font-size: 15px;
     cursor: pointer;
-    text-align: right;
-    padding:5px;  
 }
 .trash{
     color: #461F00;
-    font-size: 20px;
+    font-size: 15px;
     cursor: pointer;
-    text-align: right;
-    padding:5px;
+
     
 }
 .joinBtn {
