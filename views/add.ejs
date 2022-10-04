@@ -10,30 +10,37 @@
 </head>
 <body>
     <div class="container ">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row ">
+            <div class="col">
                 <div class="card mt-5">
-                    <div class="card-body campForm">
+                    <div class="card-body campForm col">
                         <h5 class="card-title">Add a campground:</h5>
                         <p class="card-text">
-                            <form method="POST" action="/createCampground">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-text" style="width:12rem;" id="campgroundName">Campground Name:</div>
-                                    <input type="text" class="form-control" name="name">
-                                  </div>
-                                <div class="input-group mb-3">
-                                    <div style="width: 12rem; text-align: center;" class="input-group-text" id="imgUrl">Image url:</div>
-                                    <input type="text" class="form-control" name="image">
-                                  </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-text" style="width: 12rem; text-align: center;" id="campgroundDescription">Description:</div>
-                                    <textarea type="text" class="form-control" name="description" cols="30" rows="3"></textarea>
-                                    <!-- <input type="text" class="form-control" name="description"> -->
-                                  </div>
-                                 <div style="text-align:center;">
-                                    <button type="submit" class="btn">Submit</button>
-                                 </div> 
-                              </form>
+                            <div style="
+                            display: flex;
+                            min-width: 10rem;
+                            flex-direction: row;
+                            flex-wrap: wrap">
+
+                                <form method="POST" action="/createCampground" style="width: 14rem;">
+                                    <div class="input-group mb-3 col-12">
+                                        <div class="input-group-text justify-content-center" style="width:14rem;" id="campgroundName">Campground Name:</div>
+                                        <input type="text" class="form-control" name="name">
+                                      </div>
+                                    <div class="input-group mb-3">
+                                        <div style="width: 14rem;" class="input-group-text justify-content-center" id="imgUrl">Image url:</div>
+                                        <input type="text" class="form-control" name="image">
+                                      </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-text justify-content-center" style="width: 14rem;" id="campgroundDescription">Description:</div>
+                                        <textarea type="text" class="form-control" name="description" cols="30" rows="3"></textarea>
+                                        <!-- <input type="text" class="form-control" name="description"> -->
+                                      </div>
+                                     <div style="text-align:center;">
+                                        <button type="submit" class="btn">Submit</button>
+                                     </div> 
+                                  </form>
+                            </div>
                         </p>
                     </div>
                 </div>
