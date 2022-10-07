@@ -28,7 +28,7 @@
         />
       </a>
       <button
-        class="navbar-toggler"
+        class="navbar-toggler custom-toggler"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
@@ -41,22 +41,25 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <% if (isAuthenticated === true) { %>
-          <li class="nav-item mx-4 active">
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+          <li class="nav-item mx-2 active">
             <a class="nav-link" href="/campgrounds"
               >Campgrounds <span class="sr-only">(current)</span></a
             >
           </li>
-          <li class="nav-item mx-4">
+          <li class="nav-item mx-2">
             <a class="nav-link" href="/addCampground">Add a Campground</a>
           </li>
-          <li class="nav-item mx-4">
+          <li class="nav-item mx-2">
             <a class="nav-link" href="/auth/logout">Logout</a>
           </li>
           <% } else { %>
-          <li class="nav-item mx-4">
+          <li class="nav-item mx-2">
             <a class="nav-link" href="/">Login</a>
           </li>
-          <li class="nav-item mx-4">
+          <li class="nav-item mx-2">
             <a class="nav-link" href="/register">Sign Up</a>
           </li>
           <% } %>

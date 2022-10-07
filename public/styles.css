@@ -25,10 +25,10 @@ h1{
 
 #navbarNav ul{
     background-color: #58736E;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
+    border-left: 2px solid #DF7463;
+    border-bottom: 2px solid #DF7463;
     /* width: 40%; */
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
     align-items: flex-end;
 }
 #navbarNav ul li {
@@ -43,6 +43,18 @@ a.nav-link {
     padding: 0.5rem 1rem;
     width: 165px;
 }
+button:focus:not(:focus-visible) {
+    color: #DF7463;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(223,116,99,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  
+  .custom-toggler.navbar-toggler {
+    border-color: #DF7463;
+  } 
+
 
 
 
@@ -106,7 +118,7 @@ a.nav-link {
 
 } 
 .nav-link{
-    color: #DF7463;
+    color: #FAE3D0;
     font-weight: bold;
 }
 .input-group-text{
@@ -182,6 +194,7 @@ a.nav-link {
     align-items: stretch;
     flex-wrap: wrap;
     height:400px;
+   
 }
 .wrapper{
     display: flex;
